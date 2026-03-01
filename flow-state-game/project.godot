@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="flow_state_game"
-run/main_scene="res://scenes/JRPGMain.tscn"
+config/name="静水画园"
+run/main_scene="res://scenes/AtelierMain.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -16,7 +16,7 @@ var lily_a_base_pos := Vector2.ZERO
 var lily_b_base_pos := Vector2.ZERO
 
 func _ready():
-	print("[Main] ready")
+	print("[主场景] 已就绪")
 	status_label.modulate = Color(1, 1, 1, 1)
 	puzzle.visible = false
 	if water_mist != null:
@@ -38,11 +38,11 @@ func _process(_delta: float) -> void:
 	_animate_main_backdrop()
 
 	if puzzle.visible:
-		status_label.text = "Calm Flow Puzzle"
+		status_label.text = "心流拼图阶段"
 		return
 
 	var holding := Input.is_action_pressed("ui_accept") or Input.is_key_pressed(KEY_SPACE)
-	status_label.text = "Calm Flow (Space: " + ("Inhale" if holding else "Exhale") + ")"
+	status_label.text = "心流呼吸（空格：" + ("吸气" if holding else "呼气") + "）"
 
 func _on_stability_changed(value: float):
 	stability_bar.value = value
@@ -67,7 +67,7 @@ func _add_score(points: int) -> void:
 
 func _update_score_label() -> void:
 	if score_label != null:
-		score_label.text = "Calm Points: " + str(score)
+		score_label.text = "宁静点数：" + str(score)
 
 func _animate_main_backdrop() -> void:
 	if water_mist != null:

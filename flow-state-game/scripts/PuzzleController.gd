@@ -42,9 +42,9 @@ func _ready() -> void:
 
 func start_with_stability(stability):
 	done_label.visible = false
-	done_label.text = "Completed! Team calm +1"
+	done_label.text = "完成！团队宁静 +1"
 	if instruction_label != null:
-		instruction_label.text = "Find all stars with arrow keys"
+		instruction_label.text = "用方向键踩亮所有星点"
 	filled.clear()
 	targets.clear()
 	cursor_pos = Vector2i(2, 2)

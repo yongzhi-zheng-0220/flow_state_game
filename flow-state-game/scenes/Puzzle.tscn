@@ -14,7 +14,7 @@ offset_bottom = 129.0
 theme_override_colors/font_color = Color(0.16, 0.24, 0.28, 1)
 theme_override_colors/font_outline_color = Color(0.90, 0.93, 0.88, 0.88)
 theme_override_constants/outline_size = 1
-text = "Use arrow keys"
+text = "使用方向键移动"
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=217244428]
 offset_left = -10.0
@@ -104,7 +104,7 @@ offset_top = 21.0
 offset_right = 49.0
 offset_bottom = 47.0
 theme_override_colors/font_color = Color(0.04, 0.1, 0.13, 1)
-text = "Kai"
+text = "凯"
 
 [node name="CharacterMio" type="ColorRect" parent="." unique_id=951017175]
 offset_left = 238.0
@@ -152,7 +152,7 @@ offset_top = 18.0
 offset_right = 45.0
 offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.16, 0.07, 0.11, 1)
-text = "Mio"
+text = "美绪"
 
 [node name="CharacterZen" type="ColorRect" parent="." unique_id=595403408]
 offset_left = 236.0
@@ -200,7 +200,7 @@ offset_top = 17.0
 offset_right = 45.0
 offset_bottom = 39.0
 theme_override_colors/font_color = Color(0.08, 0.14, 0.08, 1)
-text = "Zen"
+text = "禅"
 
 [node name="DoneLabel" type="Label" parent="." unique_id=1128230563]
 visible = false
@@ -211,4 +211,4 @@ offset_bottom = 360.0
 theme_override_colors/font_color = Color(0.22, 0.33, 0.28, 1)
 theme_override_colors/font_outline_color = Color(0.92, 0.95, 0.90, 0.92)
 theme_override_constants/outline_size = 1
-text = "Completed!"
+text = "完成！"

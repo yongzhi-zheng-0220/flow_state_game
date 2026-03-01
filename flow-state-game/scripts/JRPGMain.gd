@@ -100,7 +100,7 @@ func _process_enemy_timer(delta: float) -> void:
 	if player_hp <= 0:
 		state = BattleState.DEFEAT
 		log_label.text = "你被击倒了……呼吸紊乱，战斗失败。"
-		hint_label.text = "按 F5 重新开始"
+		hint_label.text = "按重新开始键以再次挑战"
 		return
 
 	log_label.text = "敌人反击，造成 %d 伤害！" % damage
@@ -116,7 +116,7 @@ func _start_player_turn() -> void:
 	stability = maxf(stability * 0.5, 0.0)
 	breath_bar.value = 0.0
 	log_label.text = "第 %d 回合：调整呼吸并完成 6 次相位切换后自动攻击。" % turn_index
-	hint_label.text = "Space: 按住吸气 / 松开呼气  |  方向键: 调整 I/E 节奏"
+	hint_label.text = "空格：按住吸气 / 松开呼气  ｜ 方向键：调整吸呼节奏"
 
 func _handle_tuning_input() -> void:
 	if Input.is_action_just_pressed("ui_up"):
@@ -166,14 +166,14 @@ func _resolve_player_attack() -> void:
 	hint_label.text = "敌人正在行动……"
 
 func _update_hud() -> void:
-	turn_label.text = "Turn %d" % turn_index
-	player_hp_label.text = "Hero HP: %d / 140" % player_hp
-	enemy_hp_label.text = "Enemy HP: %d / 220" % enemy_hp
+	turn_label.text = "第 %d 回合" % turn_index
+	player_hp_label.text = "我方生命：%d / 140" % player_hp
+	enemy_hp_label.text = "敌方生命：%d / 220" % enemy_hp
 
 	var phase_target: float = target_inhale if holding else target_exhale
 	var remain: float = maxf(phase_target - phase_time, 0.0)
-	var phase_text: String = "INHALE" if holding else "EXHALE"
-	breath_label.text = "%s  %.1fs  |  Stability %.2f  |  (I %.1f / E %.1f)  |  Combo %d/%d" % [
+	var phase_text: String = "吸气" if holding else "呼气"
+	breath_label.text = "%s  %.1f秒  ｜ 稳定度 %.2f  ｜（吸 %.1f / 呼 %.1f）｜ 连段 %d/%d" % [
 		phase_text, remain, stability, target_inhale, target_exhale, phase_switches, PHASES_PER_ATTACK
 	]
 

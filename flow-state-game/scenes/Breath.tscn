@@ -76,7 +76,7 @@ offset_bottom = 190.0
 theme_override_colors/font_color = Color(0.13, 0.25, 0.3, 1)
 theme_override_colors/font_outline_color = Color(0.90, 0.93, 0.88, 0.9)
 theme_override_constants/outline_size = 1
-text = "呼吸ガイド"
+text = "呼吸引导"
 
 [node name="PhaseBar" type="ProgressBar" parent="." unique_id=647993536]
 layout_mode = 0
@@ -134,7 +134,7 @@ offset_top = -23.0
 offset_right = 65.0
 offset_bottom = 2.0
 theme_override_colors/font_color = Color(0.03, 0.1, 0.13, 1)
-text = "Guide"
+text = "引导者"
 
 [node name="CompanionSpirit" type="ColorRect" parent="." unique_id=969823950]
 layout_mode = 0
@@ -183,4 +183,4 @@ offset_top = -24.0
 offset_right = 64.0
 offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.15, 0.06, 0.11, 1)
-text = "Mio"
+text = "美绪"

@@ -140,7 +140,7 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0.2, 0.3, 0.34, 1)
 theme_override_colors/font_outline_color = Color(0.92, 0.94, 0.9, 0.95)
 theme_override_constants/outline_size = 1
-text = "Calm Flow"
+text = "心流呼吸"
 
 [node name="ProgressBar" type="ProgressBar" parent="Playfield/CanvasLayer" unique_id=1617487556]
 layout_mode = 0
@@ -160,7 +160,7 @@ offset_bottom = 125.0
 theme_override_colors/font_color = Color(0.26, 0.34, 0.3, 1)
 theme_override_colors/font_outline_color = Color(0.92, 0.94, 0.9, 0.95)
 theme_override_constants/outline_size = 1
-text = "Calm Points: 0"
+text = "宁静点数：0"
 
 [node name="Breath" parent="Playfield" unique_id=397237726 instance=ExtResource("2")]
 layout_mode = 1

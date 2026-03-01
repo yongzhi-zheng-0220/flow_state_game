@@ -79,20 +79,20 @@ func _process(delta: float) -> void:
 	var now_holding := Input.is_action_pressed("ui_accept") or Input.is_key_pressed(KEY_SPACE)
 
 	if bg == null:
-		push_error("[BreathController] 未找到子节点 'ColorRect'。请确认 Breath 场景根节点下存在名为 ColorRect 的 ColorRect 节点。")
+		push_error("[呼吸控制器] 未找到背景颜色节点，请确认呼吸场景结构完整。")
 		set_process(false)
 		return
 
-	# 呼吸ガイド表示（吸う/吐く）と進捗バー
+	# 呼吸引导显示（吸气/呼气）与进度条
 	var phase_target: float = target_inhale if now_holding else target_exhale
 	var progress: float = clamp(phase_time / max(phase_target, 0.001), 0.0, 1.0)
 	var remain: float = max(phase_target - phase_time, 0.0)
 	if guide_label != null:
-		guide_label.text = ("吸う" if now_holding else "吐く") + "  残り " + String.num(remain, 1) + " 秒" + "  安定度 " + String.num(stability, 2) + "  (I " + String.num(target_inhale, 1) + " / E " + String.num(target_exhale, 1) + ")"
+		guide_label.text = ("吸气" if now_holding else "呼气") + "  剩余 " + String.num(remain, 1) + " 秒" + "  稳定度 " + String.num(stability, 2) + "  (吸 " + String.num(target_inhale, 1) + " / 呼 " + String.num(target_exhale, 1) + ")"
 	if phase_bar != null:
 		phase_bar.value = progress
 
-	# 立即可见的反馈：按住 Space 立刻变亮（不依赖稳定度计算）
+	# 立即可见的反馈：按住空格立刻变亮（不依赖稳定度计算）
 	var base_dark := Color(0.54, 0.64, 0.68, 1.0)
 	var base_light := Color(0.66, 0.76, 0.78, 1.0)
 	var target := base_light if now_holding else base_dark
@@ -103,7 +103,7 @@ func _process(delta: float) -> void:
 
 	# 调试：只在按下瞬间打印（不刷屏）
 	if Input.is_action_just_pressed("ui_accept") or Input.is_key_pressed(KEY_SPACE):
-		print("[Breath] Space pressed")
+		print("[呼吸阶段] 空格已按下")
 
 	phase_time += delta
 
@@ -204,6 +204,6 @@ func reset_session() -> void:
 	ready_emitted = false
 	emit_signal("stability_changed", stability)
 	if guide_label != null:
-		guide_label.text = "呼吸ガイド"
+		guide_label.text = "呼吸引导"
 	if phase_bar != null:
 		phase_bar.value = 0.0
