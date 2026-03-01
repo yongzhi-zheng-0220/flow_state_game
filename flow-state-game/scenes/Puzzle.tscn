@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ds181wdskkhxj"]
+
+[ext_resource type="Script" uid="uid://dgw4sed5sm0qm" path="res://scripts/PuzzleController.gd" id="1"]
+
+[node name="Puzzle" type="Node2D" unique_id=1353331916]
+script = ExtResource("1")
+
+[node name="Label" type="Label" parent="." unique_id=1945308489]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "Use arrow keys"
+
+[node name="GridRoot" type="Node2D" parent="." unique_id=1847479311]
+
+[node name="Cursor" type="ColorRect" parent="." unique_id=629439278]
+
+[node name="DoneLabel" type="Label" parent="." unique_id=1128230563]
+visible = false
+offset_left = 400.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 300.0
+text = "Completed!"

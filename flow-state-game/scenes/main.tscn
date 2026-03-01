@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://joifwl3ks416"]
+
+[ext_resource type="Script" uid="uid://dufci6opfrbfb" path="res://scripts/Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b3yq5xbbytbgn" path="res://scenes/Breath.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ds181wdskkhxj" path="res://scenes/Puzzle.tscn" id="3"]
+
+ [node name="Main" type="Control" unique_id=1941467173]
+script = ExtResource("1")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1164738343]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=245559280]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 520.0
+offset_bottom = 50.0
+text = "Breathing..."
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1617487556]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 320.0
+offset_bottom = 87.0
+max_value = 1.0
+
+[node name="Breath" parent="." unique_id=397237726 instance=ExtResource("2")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Puzzle" parent="." unique_id=978696777 instance=ExtResource("3")]
+visible = false
